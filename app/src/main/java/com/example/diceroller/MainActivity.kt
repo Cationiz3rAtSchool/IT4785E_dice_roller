@@ -6,7 +6,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.ComponentActivity
 
-class Dice(val nSides: Int) {
+class Dice(private val nSides: Int) {
 	fun roll(): Int {
 		return (1..nSides).random()
 	}
@@ -22,9 +22,9 @@ class MainActivity : ComponentActivity() {
 		setContentView(R.layout.activity_main)
 
 		val rollButton: Button = findViewById(R.id.button)
-		rollButton.setOnClickListener({
+		rollButton.setOnClickListener {
 			Toast.makeText(this, "Dice Rolled!", Toast.LENGTH_SHORT).show()
 			rollDice()
-		});
+		}
 	}
 }
